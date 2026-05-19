@@ -14,12 +14,7 @@ Original file is located at
 import pandas as pd
 import streamlit as st
 
-# Montar o Google Drive para gravar/acessar arquivos
-from google.colab import drive
-drive.mount('/content/drive')
-
-Path1 = "/content/drive/MyDrive/ZAPBAIRRO/dados/Cadastro_Maguari.xlsx"
-!ls /content/drive/MyDrive/ZAPBAIRRO/dados/
+Path1 = "dados/Cadastro_Maguari.xlsx"
 
 import pandas as pd
 import streamlit as st
