@@ -41,7 +41,12 @@ st.write(f"**Endereço:** {dados_empresa['endereco']}")
 st.write(f"**Telefone:** {dados_empresa['celular']}")
 st.write(f"**Horário:** {dados_empresa['horario']}")
 
-# Link direto para WhatsApp
-numero = str(dados_empresa['celular']).replace(" ", "").replace("-", "")
-link_whatsapp = f"https://wa.me/55{numero}"
-st.markdown(f"[📲 Falar no WhatsApp]({link_whatsapp})", unsafe_allow_html=True)
+# Link direto para WhatsApp com mensagem padrão
+numero = str(dados_empresa['celular']).replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+mensagem = "Este cliente está entrando na sua loja através do ZAPBAIRRO, agora é com você"
+
+# Monta o link já com a mensagem
+link_whatsapp = f"https://wa.me/{numero}?text={mensagem.replace(' ', '%20')}"
+
+st.markdown(f"[💬 Falar no WhatsApp]({link_whatsapp})", unsafe_allow_html=True)
+
