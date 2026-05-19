@@ -36,7 +36,6 @@ empresa_escolhida = st.selectbox("Selecione a empresa:", empresas_filtradas["emp
 
 # Mostrar informações da empresa
 dados_empresa = empresas_filtradas[empresas_filtradas["empresa"] == empresa_escolhida].iloc[0]
-st.write(f"**Proprietário:** {dados_empresa['proprietario']}")
 st.write(f"**Endereço:** {dados_empresa['endereco']}")
 st.write(f"**Telefone:** {dados_empresa['celular']}")
 st.write(f"**Horário:** {dados_empresa['horario']}")
@@ -48,7 +47,7 @@ import urllib.parse
 numero = str(dados_empresa['celular']).replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
 
 # Mensagem padrão
-mensagem = "Este cliente está entrando na sua loja através do ZAPBAIRRO, agora é com você"
+mensagem = "Estou entrando na sua loja através do ZAPBAIRRO."
 
 # Codifica a mensagem para URL
 mensagem_codificada = urllib.parse.quote(mensagem)
