@@ -8,9 +8,8 @@ Original file is located at
 """
 
 ####################################
-###   VERSÃO 09042026
+###   VERSÃO 19052026
 ####################################
-!pip install streamlit
 import pandas as pd
 import streamlit as st
 
