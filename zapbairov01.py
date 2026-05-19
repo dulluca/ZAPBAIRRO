@@ -22,7 +22,7 @@ import streamlit as st
 cadastro_maguari = pd.read_excel(Path1)
 
 # Título do app
-st.title("ZAPBAIRRO - Seu Marketplace Hiperlocal")
+st.title("ZAPBAIRRO - Seu Marketplace local")
 
 # Seleção de categoria
 categorias = cadastro_maguari["categoria"].unique()
