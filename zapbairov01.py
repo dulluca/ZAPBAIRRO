@@ -42,11 +42,18 @@ st.write(f"**Telefone:** {dados_empresa['celular']}")
 st.write(f"**Horário:** {dados_empresa['horario']}")
 
 # Link direto para WhatsApp com mensagem padrão
+import urllib.parse
+
+# Normaliza o número
 numero = str(dados_empresa['celular']).replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+
+# Mensagem padrão
 mensagem = "Este cliente está entrando na sua loja através do ZAPBAIRRO, agora é com você"
 
-# Monta o link já com a mensagem
-link_whatsapp = f"https://wa.me/{numero}?text={mensagem.replace(' ', '%20')}"
+# Codifica a mensagem para URL
+mensagem_codificada = urllib.parse.quote(mensagem)
+
+# Monta o link
+link_whatsapp = f"https://wa.me/{numero}?text={mensagem_codificada}"
 
 st.markdown(f"[💬 Falar no WhatsApp]({link_whatsapp})", unsafe_allow_html=True)
-
